@@ -1,5 +1,10 @@
 <template>
   <div class="flex flex-col">
+    <!--Conditional rendering with v-if-->
+    <div v-if="todos.length >= 3">You have {{ todos.length }} todo items!</div>
+    <div v-else>You have very few todo items. Good job!</div>
+    <div>Use 'computed' to calculate something: {{ reverseText }}</div>
+    <!--Usage of computed-->
     <div class="flex flex-row self-center">
       <input
         class="border-2 my-2 mx-1 p-2"
@@ -7,8 +12,10 @@
         v-model="newTodoText"
         placeholder="My new todo item"
       />
+      <!--v-on:click directive for DOM events-->
       <button class="border-2 my-2 mx-1 p-2" v-on:click="addTodo">Submit</button>
     </div>
+    <!--v-for directive for listing items from an array, each item requires a key-->
     <div v-for="todo in todos" :key="todo.id" class="">
       <!--Passing the todo prop and the removeTodo function prop-->
       <Card v-bind:todo="todo" v-bind:removeTodo="removeTodo" />
@@ -57,6 +64,11 @@ export default {
   // Run on site load
   async created() {
     await this.getTodos()
+  },
+  computed: {
+    reverseText: function () {
+      return "Some text".split("").reverse().join("")
+    },
   },
 }
 </script>
