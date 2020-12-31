@@ -1,2 +1,2 @@
-npx prettier --write "**/*.tsx"
+npx prettier --write "**/*.vue"
 black --line-length 120 .

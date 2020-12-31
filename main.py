@@ -23,6 +23,7 @@ async def show_all_todos() -> List[Dict[str, str]]:
         todos.append(
             {"id": row[0], "content": row[1],}
         )
+    logger.info(f"Returning: {todos}")
     return todos
 
 

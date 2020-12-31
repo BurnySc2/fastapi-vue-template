@@ -14,10 +14,14 @@ poetry install
 npm install
 ```
 
+# Configuration
+#### Set backend proxy server
+Edit `vue.config.js` and set the IP address
+
 # Development
 
 ```
-npm run start
+npm run serve
 poetry run python main.py
 ```
 Or to autorestart backend server:
@@ -63,7 +67,7 @@ poetry run python main.py
 # Autoformatting
 
 ```
-npx prettier --write "**/*.tsx"
+npx prettier --write "**/*.vue"
 black --line-length 120 .
 ```
 
