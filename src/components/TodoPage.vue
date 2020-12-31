@@ -24,7 +24,6 @@ export default {
     data() {
         // Object of state variables
         return {
-            newid: 1,
             newTodoText: "",
             todos: [],
         }
